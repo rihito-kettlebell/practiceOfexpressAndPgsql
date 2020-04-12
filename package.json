@@ -13,7 +13,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "node index.js",
-    "table": "node table.js"
+    "table": "node table.js",
+    "asyncTable": "node asyncTable.js"
   },
   "keywords": [],
   "author": "",
