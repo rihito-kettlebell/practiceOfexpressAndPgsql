@@ -14,6 +14,7 @@ async function transaction() {
     // BEGIN
     await client.query("BEGIN");
     await client.query("select * from staff");
+
     await client.query("insert into staff values ($1, $2, $3)", [
       2,
       "hanako",
@@ -22,8 +23,10 @@ async function transaction() {
     console.log("insert a new row");
     // COMMIT
     await client.query("COMMIT");
-  } catch (error) {
-    console.log(error);
+  } catch (ex) {
+    console.log('Failed to execute something' + ex + "this is error")
+    console.log(`Failed to execute something ${ex}`)
+    console.log(ex)
   } finally {
     await client.end();
     console.log("Client disconnected successfully");
