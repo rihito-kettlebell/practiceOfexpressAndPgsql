@@ -14,7 +14,8 @@
   "scripts": {
     "test": "node index.js",
     "table": "node table.js",
-    "asyncTable": "node asyncTable.js"
+    "asyncTable": "node asyncTable.js",
+    "transaction": "node transaction.js"
   },
   "keywords": [],
   "author": "",
