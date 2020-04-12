@@ -10,13 +10,10 @@ const client = new Client({
 
 client
   .connect()
-  // 接続を確認
   .then(() => console.log("Connected successfuly"))
-  // テーブルから取得
+  // 追加するのはこの列のコード
+  .then(() => client.query("insert into staff values ($1, $2, $3)", [1, "taro", 21]))
   .then(() => client.query("select * from staff"))
-  // 結果を返す
   .then((results) => console.table(results.rows))
-  // エラーの場合
   .catch((e) => console.log(e))
-  // 終了
   .finally(() => client.end());
